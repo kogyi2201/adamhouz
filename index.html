@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Houz | Premium Mobile Phone Repair Shop</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- Base & Reset Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #ff9f0a; /* Premium Gold/Orange Accent from your signage */
+            --secondary-color: #1d1d1f; /* Sleek Matte Dark Neutral */
+            --light-bg: #f5f5f7;
+            --white: #ffffff;
+            --blue-accent: #0071e3; /* Tech Blue */
+        }
+
+        body {
+            color: var(--secondary-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #111;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #e08b04;
+            transform: translateY(-2px);
+            color: #000;
+        }
+
+        /* --- Header / Navigation --- */
+        header {
+            background: rgba(29, 29, 31, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--white);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section (Using image_2.png as full background) --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)), url('image_2.png') no-repeat center center/cover;
+            color: var(--white);
+            padding: 160px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* --- Services Section --- */
+        .services {
+            padding: 80px 0;
+            background: var(--light-bg);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-top: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-top: 3px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card i {
+            font-size: 45px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            background: #fff3e0;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .service-card:hover i {
+            background: var(--primary-color);
+            color: #000;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* --- Why Choose Us Section --- */
+        .features {
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item i {
+            font-size: 45px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-item h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* --- Branch Showcases with Images --- */
+        .branch-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .branch-row {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .branch-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .branch-img {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            border: 3px solid var(--secondary-color);
+        }
+
+        .branch-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .branch-img img:hover {
+            transform: scale(1.03);
+        }
+
+        .branch-details {
+            flex: 1;
+        }
+
+        .branch-details h3 {
+            font-size: 28px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .branch-details ul li {
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .branch-details ul i {
+            color: var(--blue-accent);
+            margin-top: 5px;
+            font-size: 18px;
+        }
+
+        /* --- Footer Section --- */
+        footer {
+            background: var(--secondary-color);
+            color: #bbb;
+            padding: 40px 0 20px 0;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-box h4 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-box p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .branch-row, .branch-row:nth-child(even) {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .branch-img, .branch-details {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Adam <span>Houz</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#locations">Our Shops</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+601162825880" class="btn"><i class="fa-solid fa-phone"></i> Call Hotline</a>
+        </div>
+    </header>
+
+    <!-- Hero Section (image_2.png serves as background here) -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Pakar Repair <span>Fon Anda</span></h1>
+            <p>At Adam Houz, we deliver premium, industry-grade hardware diagnostics, expert micro-soldering, CPU reballing, and structural device restorations.</p>
+            <a href="#locations" class="btn">Find Nearest Branch</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Professional Technical Services</h2>
+            <div class="services-grid">
+                
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>Screen Replacement</h3>
+                    <p>Flawless high-grade LCD, OLED, and glass replacements with factory-standard touch responsiveness and true color retention.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <i class="fa-solid fa-microchip"></i>
+                    <h3>Motherboard Micro-Soldering</h3>
+                    <p>Advanced chip-level troubleshooting, professional CPU reballing, logic board swappings, and structural Face ID/Camera repairs.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <i class="fa-solid fa-battery-three-quarters"></i>
+                    <h3>Battery & Charging Ports</h3>
+                    <p>Certified diagnostic verification with high-capacity premium battery cells and charging port repairs for continuous power stability.</p>
+                </div>
+				<div class="service-card">
+                    <i class="fa-solid fa-laptop-medical"></i>
+                    <h3>Laptop Repair</h3>
+                    <p>Expert diagnostic troubleshooting for MacBooks and Windows laptops. Handling water damage recovery, keyboard replacements, broken hinges, and specialized motherboard power rail troubleshooting.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-desktop"></i>
+                    <h3>Desktop PC Repair</h3>
+                    <p>Custom PC builds, hardware upgrades (SSD/RAM), blue screen (BSOD) crash fixes, thermal paste maintenance, and dedicated power supply unit (PSU) or graphics card diagnostics.</p>
+                </div>
+				<div class="service-card">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Data Recovery Services</h3>
+                    <p>Advanced data extraction from dead motherboards, water-damaged logic boards, corrupted storage chips (UFS/eMMC/NAND), and malfunctioning hard drives or SSDs. We pull your critical photos and files when others say it's impossible.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Adam Houz</h2>
+            <div class="features-grid">
+                
+                <div class="feature-item">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h4>Express Repair</h4>
+                    <p>Standard hardware and modular components are serviced rapidly in-house while you wait.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Premium Components</h4>
+                    <p>We source top-tier replacement modules ensuring long-lasting operational reliability.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fa-solid fa-user-check"></i>
+                    <p>Deep specialization across premium Android & iOS ecosystems handling complicated diagnostic faults.</p>
+                    <h4>Expert Tele-Technicians</h4>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Locations Section with Embedded Images -->
+    <section id="locations" class="branch-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Visit Our Outlets</h2>
+            
+            <!-- Branch 1: Batang Kali Outlet (Uses image.png) -->
+            <div class="branch-row">
+                <div class="branch-img">
+                    <img src="image.png" alt="Adam Houz Batang Kali Store Front">
+                </div>
+                <div class="branch-details">
+				 <div class="gps-btn-container">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Adam+Houz+Mobile+Batang+Kali" target="_blank" class="gps-btn google-maps">
+                    <h3>Batang Kali Branch (HQ)</h3>
+					 </a>
+                        
+                        
+                    </div>
+                    <ul>
+                       
+                        <li><i class="fa-solid fa-phone"></i> +60 11-6282 5880</li>
+                        <li><i class="fa-solid fa-clock"></i> 10:30 AM - 12:00 AM (Daily Open)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Walk-ins welcome & On-the-spot hardware profiling available.</li>
+						<li><i class="fa-solid fa-circle-check"></i> Complete chip-level laboratory diagnostics equipped for multi-tier micro-soldering.</li>
+                    </ul>
+					  
+                    <div class="gps-btn-container">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Adam+Houz+Mobile+Batang+Kali" target="_blank" class="gps-btn google-maps">
+                            <i class="fa-solid fa-map-location-dot"></i> 37, Jln Mahagoni 7/3, Seksyen 4 Bandar Utama Batang Kali, 44300 Batang Kali, Selangor
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branch 2: Serendah Outlet (Uses image_3.png) -->
+            <div class="branch-row">
+                <div class="branch-img">
+                    <img src="image_3.png" alt="Adam Houz Serendah Premium Workshop">
+                </div>
+                <div class="branch-details">
+				<div class="gps-btn-container">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Adam+Houz+Mobile+Serendah" target="_blank" class="gps-btn google-maps">
+                    <h3>Serendah Branch</h3>
+				 </a>
+                      
+                    </div>	
+                    <ul>
+                     
+                        <li><i class="fa-solid fa-phone"></i> +601162825880</li>
+                        <li><i class="fa-solid fa-clock"></i> 10:30 AM - 12:00 AM (Daily Open)</li>
+						<li><i class="fa-solid fa-circle-check"></i> Walk-ins welcome & On-the-spot hardware profiling available.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Complete chip-level laboratory diagnostics equipped for multi-tier micro-soldering.</li>
+                    </ul>
+					
+                    <div class="gps-btn-container">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Adam+Houz+Mobile+Serendah" target="_blank" class="gps-btn google-maps">
+                            <i class="fa-solid fa-map-location-dot"></i>  13,Jalan Ros 1e/2,Bukit Sentosa,48300 Rawang, Selangor
+                        </a>
+                      
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-box">
+                    <h4>Adam Houz Mobile</h4>
+                    <p>Your premier technician-operated ecosystem handling high-end microchip recovery, modular diagnostics, and mobile accessories.</p>
+                </div>
+                <div class="footer-box">
+                    <h4>General Support</h4>
+                    <p>Email: info@adamhouz.com<br>Main Line: +60 11-6282 5880</p>
+                </div>
+                <div class="footer-box">
+                    <h4>Service Operations</h4>
+                    <p>Providing expert hardware solutions across Batang Kali and Serendah branches.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2020 Adam Houz Mobile. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
